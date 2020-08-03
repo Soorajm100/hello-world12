@@ -1,0 +1,18 @@
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+body{
+    background: repeating-radial-gradient(rgb(41, 75, 228),rgb(11, 226, 144));
+}
+o{
+    text-align: center;
+}
+.container:hover{
+    background-color: aqua;
+    padding: 30%;
+    box-shadow: 0 8px 16px 0 greenyellow;
+    height:100%;
+    width:50%;
+    cursor:pointer;
+
+
+
+}
