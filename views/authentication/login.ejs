@@ -15,50 +15,49 @@
 </head>
 
 <body>
-    <nav id="navbar" style="justify-content: space-between;">
+    <nav id="navbar">
         <div id="logo">
             <img src="../../assets/logo.png" alt="">
         </div>
 
         <ul id="options">
-            <li id="choice"><a href="/articles">All Articles</a></li>
-            <li id="choice"><a href="/articles/myArticles">My Articles</a></li>
-            <li id="choice"><a href="/articles/new">New Article</a></li>
-
+            <li id="choice"><a href="/">Home</a></li>
+            <li id="choice"><a href="/users/login">Login</a></li>
+            <li id="choice"><a href="/users/register">Register</a></li>
+            <li id="choice"><a class="disabled" href="#" aria-disabled="true" id="choice">Articles</a></li>
 
         </ul>
-        <a href="/users/logout" class="btn btn-secondary" id="logout">Logout</a>
+
 
     </nav>
-    <div class="container" style="overflow-y: auto;">
-        <div class="head">
-            <h1 class="mb-1" id="page-title">Type-0</h1>
+    <div class="container" style="overflow-y: auto">
+        <h1 class="mb-4" id="page-title">Login to Type-O!!!</h1>
+        <div class="card" id="">
+            <%- include("./partials/messages") %>
+            <form action="/users/login" method="POST">
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
+                        value="<%= typeof email != 'undefined' ? email : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control"
+                        placeholder="Create Password" value="<%= typeof password != 'undefined' ? password : '' %>" />
+                </div>
+
+                <div class="options" id="options">
+                    <a href="/" class="btn btn-danger btn-block mb-2 mt-2 ml-2 mr-2">Cancel</a>
+                    <button type="submit" class="btn btn-primary btn-block mb-3 mt-3 ml-2 mr-2">
+                        Login
+                    </button>
+                </div>
+            </form>
+            <p class="lead mt-4 card-text">New to Type-O? <a href="/users/register">Register</a></p>
 
         </div>
 
-        <a href="/articles/new/" class="btn btn-success">New Article</a>
-        <% articles.forEach(article =>{ %>
-        <div class="card mt-4">
-            <div class="card-body">
-                <div class="card-title">
-                    <h4><%= article.title %></h4>
-                </div>
-                <div class="card-subtitle mb-2">
-                    <%= article.created.toLocaleDateString() %>
-                </div>
-                <div class="card-subtitle mb-2">
-                    -by <%= article.author %>
-                </div>
-                <div class="card-text mb-2">
-                    <%= article.description %>
-                </div>
-                <div id="crud"><a href="/articles/<%= article.slug %>" class="btn btn-primary mr-3 ml-3 mt-4">Read
-                        More</a>
-
-                </div>
-            </div>
-        </div>
-        <%}) %>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

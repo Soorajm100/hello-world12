@@ -7,12 +7,21 @@ const dompurify = createDomPurifier(new JSDOM().window);
 const articleSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     description: {
         type: String
     },
     markdown: {
+        type: String,
+        required: true
+    },
+    author: {
+        type: String,
+        required: true
+    },
+    authorEmail: {
         type: String,
         required: true
     },
@@ -40,4 +49,4 @@ articleSchema.pre('validate', function (next) {
     }
     next();
 });
-module.exports = mongoose.model('Article', articleSchema); 
+module.exports = mongoose.model('Article', articleSchema);

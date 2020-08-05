@@ -32,7 +32,7 @@
     </nav>
     <div class="container" style="overflow-y: auto;">
         <div class="head">
-            <h1 class="mb-1" id="page-title">Type-0</h1>
+            <h1 class="mb-1" id="page-title">My Articles</h1>
 
         </div>
 
@@ -54,7 +54,11 @@
                 </div>
                 <div id="crud"><a href="/articles/<%= article.slug %>" class="btn btn-primary mr-3 ml-3 mt-4">Read
                         More</a>
+                    <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
 
+                        <button class="btn btn-danger mr-3 ml-3 mt-4" type="submit">Delete </button>
+                    </form>
+                    <a href="/articles/edit/<%= article.id %>" class="btn btn-primary mr-3 ml-3 mt-4"> Edit</a>
                 </div>
             </div>
         </div>
