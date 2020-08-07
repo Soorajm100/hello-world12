@@ -5,33 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TYP-O: India's first uncensored platform to write whatever there is in yor mind</title>
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/nav2.css">
+    <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/style.css">
-
 </head>
 
 <body>
-    <nav id="navbar">
-        <div id="logo">
-            <img src="../../assets/logo.png" alt="">
-        </div>
+   
 
-        <ul id="options">
-            <li id="choice"><a href="/">Home</a></li>
-            <li id="choice"><a href="/users/login">Login</a></li>
-            <li id="choice"><a href="/users/register">Register</a></li>
-            <li id="choice"><a class="disabled" href="#" aria-disabled="true" id="choice">Articles</a></li>
+</head>
 
-        </ul>
+<script type="text/javascript">
 
+    function openNav() { 
+        document.getElementById("myNav").style.width = "100%"; 
+    } 
+    
+    function closeNav() { 
+        document.getElementById("myNav").style.width = "0%"; 
+    }
+    
+    </script>
 
-    </nav>
-    <div class="container" style="overflow-y: auto">
-        <h1 class="mb-4" id="page-title">Register to Type-O!!!</h1>
+<body>
+
+    
+    <span class="menu-icon" onclick="openNav()">&#9776;</span>
+    <div class="menu-container" id="myNav">
+        <a href="javascript:void(0)" class="closebtn"
+        onclick="closeNav()">&times;</a> 
+    <div class="menu-content" style="  position: relative;
+    top:25%;
+    width:100%;
+    text-align:center;
+    margin-top:30px;">
+        <a href="/">Home</a></li>
+         <a href="/users/login">Login</a></li>
+        <a href="/users/register">Register</a></li>
+        <a class="disabled" href="#" aria-disabled="true" id="choice">Articles</a></li>
+    </div>
+    </div>
+    <div id="topframe"><h1 class="mb-4" id="page-title">Register to Type-O!!!</h1></div>
+    <br/><br/><br/>
+    
+    <div class="container" >
+        
+   
         <div class="card" id="">
             <%- include("./partials/messages") %>
             <form action="/users/register" method="POST">
@@ -63,12 +89,15 @@
                     </button>
                 </div>
             </form>
-            <p class="lead mt-4 card-text">Have An Account? <a href="/users/login">Login</a></p>
+           
 
         </div>
+        
 
     </div>
-
+    <div id="bottomframe" >
+    <p class="lead mt-4 card-text">Have An Account? <a href="/users/login">Login</a></p>
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
